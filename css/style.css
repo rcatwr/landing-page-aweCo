@@ -1,3 +1,4 @@
+html {overflow-y: scroll;}
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
@@ -80,6 +81,7 @@ i {
 /* layout elements */
 
 .content-wrapper {
+ 
   width: 90%;
   margin: 0 auto;
 }
@@ -285,7 +287,9 @@ header button:hover {
  */
 #menuToggle input:checked ~ span {
   opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
+  /* transform: rotate(45deg) translate(-2px, -1px); */
+   transform: rotate(45deg) translate(-0.5px, 0px);
+
   background: #fff;
 }
 
@@ -301,7 +305,8 @@ header button:hover {
  * Ohyeah and the last one should go the other direction
  */
 #menuToggle input:checked ~ span:nth-last-child(2) {
-  transform: rotate(-45deg) translate(0, -1px);
+  /* transform: rotate(-45deg) translate(0, -1px); */
+   transform: rotate(-45deg) translate(0, 0px);
 }
 
 /*
@@ -315,7 +320,7 @@ header button:hover {
   margin: -5em 0 0 -100px;
   padding: 6em;
   padding-top: 125px;
-
+  
   background: #003040e6;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
@@ -342,6 +347,18 @@ header button:hover {
 /* media queries */
 
 @media (min-width: 700px) {
+  #menuToggle input:checked ~ span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+     /* transform: rotate(45deg) translate(-0.5px, 0px); */
+  }
+
+  #menuToggle input:checked ~ span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+     /* transform: rotate(-45deg) translate(0, 0px); */
+  }
+
+
   body{
     font-size: 16px;
   }

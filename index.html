@@ -8,6 +8,8 @@
   <link href="css/style.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" />
+  
 </head>
 
 <body>
@@ -73,18 +75,23 @@
   <div class="hero">
     <div class="widget widget-1">
       <div class="content-wrapper">
-        <div class="widget-text">
+        <div class="widget-text" data-aos="fade-in">
           <h1>We've got the Awesome intel you need.</h1>
 
           <p>We're Awesome. We analyze data and do some pretty great stuff with it. Good business decisions start with awesome data. That's why we give you
             only the good stuff. People trust Awesome to deliver data on key indicators to inform stakeholders, outfielders and think-tank publicists.
           
           </p>
+          <p>You won't find anything like that anywhere else.</p>
+
+          <p>
+            Data is all around us! Just look and see what might be stuck to the bottom of your crocs. Are they comfortable. That's real data. 
+          </p>
         </div>
       </div>
     </div>
   </div>
-  <div class="widget widget-2">
+  <div class="widget widget-2" data-aos="fade-right">
     <div class="content-wrapper">
       <div class="widget-content-container">
         <img class="widget-image" src="images/markus-spiske-hvSr_CVecVI-unsplash.jpg" alt="code on a computer screen" />
@@ -105,12 +112,12 @@
     </div>
   </div>
 
-  <div class="widget widget-3">
+  <div class="widget widget-3" data-aos="fade-left">
     <div class="content-wrapper">
       <div class="widget-content-container">
         <img class="widget-image" src="images\s-o-c-i-a-l-c-u-t-r0saAQNjEjQ-unsplash.jpg"
           alt="people working on laptops in well-lit space" />
-        <div class="widget-text">
+        <div class="widget-text" >
           <h3 class="widget-title">Our Experts</h3>
           <h2>Introducing Team Awesome.</h2>
 
@@ -120,19 +127,23 @@
             Team Awesome is composed of top performers and experts in their respected fields. Team Awesome only has the best economists, data analysts, cat wranglers, python trainers and spatial modellers around. We are certain that
             you will impressed -- no, amazed, with how awesome Team Awesome is and how they can deliver.
           </p>
+          <p>You won't find anything like that anywhere else.</p>
 
+          <p>
+            Data is all around us! Just look and see what might be stuck to the bottom of your crocs. Are they comfortable. That's real data. 
+          </p>
           <button class="action">Connect with our experts</button>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="widget widget-4">
+  <div class="widget widget-4" data-aos="fade-right">
     <div class="content-wrapper">
       <div class="widget-content-container">
         <img class="widget-image" src="images\dan-schiumarini-dcL8ESbsGis-unsplash.jpg"
           alt="people working on laptops in well-lit space" />
-        <div class="widget-text">
+        <div class="widget-text" >
           <h3 class="widget-title">Testimonials</h3>
           <h2>
             Hundreds of companies have used our awesome stuff to level up their
@@ -148,7 +159,11 @@
           <p>
             Take a peek at who else has used awesome research to beat the competition.
           </p>
+          <p>You won't find anything like that anywhere else.</p>
 
+          <p>
+            Data is all around us! Just look and see what might be stuck to the bottom of your crocs. Are they comfortable. That's real data. 
+          </p>
           <button class="action">Read their stories</button>
         </div>
       </div>
@@ -195,6 +210,42 @@
       </div>
     </div>
   </footer>
-</body>
+  <script>
+    function stopScroll(){
+      const burger = document.getElementById('hamburger')
+      const overlay = document.querySelector('#menu')
+      burger.addEventListener('click', e => {
+        console.log(e.target.checked)
+        if (e.target.checked){
+          // When the modal is shown, we want a fixed body
+          document.body.style.position = 'fixed';
+          document.body.style.width = '100%';
+          document.body.style.top = `-${window.scrollY}px`;
 
+
+         
+        } else {
+          // When the modal is hidden...
+          const scrollY = document.body.style.top;
+          document.body.style.position = '';
+          document.body.style.top = '';
+          window.scrollTo(0, parseInt(scrollY || '0') * -1)
+          
+        }
+
+      })
+
+    }
+    stopScroll();
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous"></script>
+  <script>
+    AOS.init({
+      delay: 200,
+      duration: 1200,
+      once:false
+    })
+  </script>
+</body>
+ 
 </html>
